@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index_style.css') }}">
+</head>
+<body>
+    <div class="NavBar">
+        <h2 class="NavBar2">Sasquatch Websightings</h2>
+        <nav class="NavBar">
+            <p class="NavBar2">{{user.first_name}} {{ user.last_name}}</p>
+            <button class="NavBar2"><a href="/dashboard">Dashboard</a></button>
+            <button class="NavBar2"><a href="/logout">Logout</a></button>
+        </nav>
+    </div>
+    <form action='/create/renamer' method="post">
+        <h2>Report a Sighting</h2>
+        {% with messages = get_flashed_messages(category_filter=['renamer']) %}
+            {% if messages %}
+            <div class="alert alert-danger" role="alert">
+                <strong>Flash AHHHHHHH!!!!</strong>
+                    {% for message in messages %}
+                    <p>{{message}}</p>
+                    {% endfor %}
+            </div>
+            {% endif %}
+        {% endwith %}
+        <div>
+            <div>
+                <p>Name of File:</p>
+                <input type="text" name="name">
+            </div>
+            <div>
+                <p>Date of Creation:</p>
+                <input type="datetime-local" name="date" id="date">
+            </div>
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</body>
+</html>

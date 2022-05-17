@@ -1,0 +1,48 @@
+body{
+    background-color: powderblue;
+    align-items: top;
+    justify-content: space-around;
+}
+#b2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.b5{
+    width: 300px;
+}
+
+
+.NavBar {
+    background-color: royalblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px
+}
+.NavBar2 {
+    color: white;
+    font-size: 25px;
+    margin: 20px;
+}
+.Main{
+    align-items: top;
+    justify-content: space-evenly;
+    display: flex;
+
+}
+.LeftMain{
+    width: 45%;
+    border-color: grey;
+    border-style: solid;
+    margin: 10px;
+    padding: 10px;
+
+}
+.RightMain{
+    width: 45%px;
+    border-color: grey;
+    border-style: solid;
+    margin: 10px;
+    padding: 10px;
+}

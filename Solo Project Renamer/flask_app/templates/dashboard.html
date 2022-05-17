@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index_style.css') }}">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+</head>
+<body>
+    <div class="NavBar">
+        <h2 class="NavBar2">File Renamer</h2>
+        <nav class="NavBar">
+            <p class="NavBar2">{{user.first_name}} {{ user.last_name}}</p>
+            <button class="NavBar2"><a href="/new/name">Rename</a></button>
+            <button class="NavBar2"><a href="/logout">Logout</a></button>
+        </nav>
+    </div>
+    <div class="Main">
+        <div class="LeftMain">
+            {% for renamers in show %}
+            <div  id="b2">
+                <div>
+                    <h3>File Number {{renamers.id}}</h3>
+                    <p>Original Name: {{renamers.name}}</p>
+                    <p>Original Date Time: {{renamers.date}}</p>
+                    <p>Unix Date Time: {{renamers.unixdate}}</p>
+                </div>
+                <div>
+                    <button><a href="/show/{{renamers.id}}">View</a></button>
+                    <button><a href="/edit/{{renamers.id}}">Edit</a></button>
+                    <button><a href="/delete/renamer/{{renamers.id}}">Delete</a></button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="RightMain">
+            <h3>Explanations</h3>
+            <p>why change your filenames?</p>
+            <p class="b5">Often times you save files from many different places, each with their own way of naming files, and it can be nice to have a single naming scheme for files on your computer.</p>
+        </div>
+    </div>
+</body>
+</html>
