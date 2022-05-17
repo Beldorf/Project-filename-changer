@@ -1,5 +1,5 @@
 body{
-    background-color: powderblue;
+    background-color: #292929;
     align-items: top;
     justify-content: space-around;
 }
@@ -10,18 +10,22 @@ body{
 }
 .b5{
     width: 300px;
+    color: #bababa;
+}
+.a6{
+    padding-left: 15px;
 }
 
 
 .NavBar {
-    background-color: royalblue;
+    background-color: #171616;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100px
+    height: 70px
 }
 .NavBar2 {
-    color: white;
+    color: #bababa;
     font-size: 25px;
     margin: 20px;
 }

@@ -16,29 +16,38 @@
             <button class="NavBar2"><a href="/logout">Logout</a></button>
         </nav>
     </div>
-    <form action='/create/renamer' method="post">
-        <h2>Report a Sighting</h2>
-        {% with messages = get_flashed_messages(category_filter=['renamer']) %}
-            {% if messages %}
-            <div class="alert alert-danger" role="alert">
-                <strong>Flash AHHHHHHH!!!!</strong>
-                    {% for message in messages %}
-                    <p>{{message}}</p>
-                    {% endfor %}
+    <div class="Main">
+        <form action='/create/renamer' method="post" class="LeftMain">
+            <h2 class="b5">Report a Sighting</h2>
+            {% with messages = get_flashed_messages(category_filter=['renamer']) %}
+                {% if messages %}
+                <div class="alert alert-danger" role="alert">
+                    <strong>Flash AHHHHHHH!!!!</strong>
+                        {% for message in messages %}
+                        <p>{{message}}</p>
+                        {% endfor %}
+                </div>
+                {% endif %}
+            {% endwith %}
+            <div class="a6">
+                <div>
+                    <p class="b5">Name of File:</p>
+                    <input type="text" name="name">
+                </div>
+                <div>
+                    <p class="b5">Date of Creation:</p>
+                    <input type="datetime-local" name="date" id="date">
+                </div>
+                <input type="submit" value="Submit">
+                <p class="b5">(Month/Day/Year, Hour:Minute,(AM/PM))</p>
             </div>
-            {% endif %}
-        {% endwith %}
-        <div>
-            <div>
-                <p>Name of File:</p>
-                <input type="text" name="name">
-            </div>
-            <div>
-                <p>Date of Creation:</p>
-                <input type="datetime-local" name="date" id="date">
-            </div>
-            <input type="submit" value="Submit">
+        </form>
+        <div class="RightMain">
+            <h3 class="b5">Explanations</h3>
+            <p class="b5">why change your filenames?</p>
+            <p class="b5">Often times you save files from many different places, each with their own way of naming files, and it can be nice to have a single naming scheme for files on your computer.</p>
+            <p class="b5">The nice thing about using unix time is being able to see when the file was saved at a glance. Unix time is the number of seconds since january 1st 1970, a sort of arbitrary date to make sure that all unix timestamps will be positive numbers.</p>
         </div>
-    </form>
+    </div>
 </body>
 </html>

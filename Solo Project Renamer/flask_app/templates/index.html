@@ -7,10 +7,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='index_style.css') }}">
 </head>
-<body>
-    <form action="/register" method="post">
+<body class="Main">
+    <form action="/register" method="post" class="LeftMain">
         <div id="first_row">
-            <h2>Register</h2>
+            <h2 class="b5">Register</h2>
             {% with messages = get_flashed_messages(category_filter=['register']) %}
                 {% if messages %}
                 <div class="alert alert-danger" role="alert">
@@ -22,31 +22,31 @@
                 {% endif %}
             {% endwith %}
             <div>
-                <p>First Name:</p>
+                <p class="b5">First Name:</p>
                 <input type="text" name="first_name">
             </div>
             <div>
-                <p>Last Name:</p>
+                <p class="b5">Last Name:</p>
                 <input type="text" name="last_name">
             </div>
             <div>
-                <p>Email:</p>
+                <p class="b5">Email:</p>
                 <input type="text" name="email">
             </div>
             <div>
-                <p>Password:</p>
+                <p class="b5">Password:</p>
                 <input type="password" name="password">
             </div>
             <div>
-                <p>Confirm Password:</p>
+                <p class="b5">Confirm Password:</p>
                 <input type="password" name="confirm">
             </div>
             <input type="submit" value="Register">
         </div>
     </form>
-    <form action="/login" method="post">
+    <form action="/login" method="post" class="RightMain">
         <div class="second_row">
-            <h2>Login</h2>
+            <h2 class="b5">Login</h2>
             {% with messages = get_flashed_messages(category_filter=['login']) %}
                 {% if messages %}
                 <div class="alert alert-danger" role="alert">
@@ -58,11 +58,11 @@
                 {% endif %}
             {% endwith %}
             <div>
-                <p>Email:</p>
+                <p class="b5">Email:</p>
                 <input type="text" name="email">
             </div>
             <div>
-                <p>Password:</p>
+                <p class="b5">Password:</p>
                 <input type="password" name="password">
             </div>
             <input type="submit" value="Login">

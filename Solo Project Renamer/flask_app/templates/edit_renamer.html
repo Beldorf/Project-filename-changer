@@ -16,29 +16,38 @@
             <button class="NavBar2"><a href="/logout">Logout</a></button>
         </nav>
     </div>
-    <form action="/update/renamer" method="post">
-        {% with messages = get_flashed_messages(category_filter=['painting']) %}
-            {% if messages %}
-            <div class="alert alert-danger" role="alert">
-                <strong>Flash AHHHHHHH!!!!</strong>
-                    {% for message in messages %}
-                    <p>{{message}}</p>
-                    {% endfor %}
-            </div>
-            {% endif %}
-        {% endwith %}
-        <div>
-            <input type="hidden" name="id" value={{edit.id}}>
+    <div class="Main">
+        <form action="/update/renamer" method="post" class="LeftMain">
+            {% with messages = get_flashed_messages(category_filter=['painting']) %}
+                {% if messages %}
+                <div class="alert alert-danger" role="alert">
+                    <strong>Flash AHHHHHHH!!!!</strong>
+                        {% for message in messages %}
+                        <p>{{message}}</p>
+                        {% endfor %}
+                </div>
+                {% endif %}
+            {% endwith %}
             <div>
-                <p>Name of File:</p>
-                <input type="text" name="name" value="{{edit.name}}">
+                <input type="hidden" name="id" value={{edit.id}}>
+                <div>
+                    <p class="b5">Name of File:</p>
+                    <input type="text" name="name" value="{{edit.name}}">
+                </div>
+                <div>
+                    <p class="b5">Date of Creation:</p>
+                    <input type="datetime-local" name="date" value="{{edit.date}}">
+                </div>
+                <input type="submit" value="Update">
+                <p class="b5">(Month/Day/Year, Hour:Minute,(AM/PM))</p>
             </div>
-            <div>
-                <p>Date of Creation:</p>
-                <input type="datetime-local" name="date" value="{{edit.date}}">
-            </div>
-            <input type="submit" value="Update">
+        </form>
+        <div class="RightMain">
+            <h3 class="b5">Explanations</h3>
+            <p class="b5">why change your filenames?</p>
+            <p class="b5">Often times you save files from many different places, each with their own way of naming files, and it can be nice to have a single naming scheme for files on your computer.</p>
+            <p class="b5">The nice thing about using unix time is being able to see when the file was saved at a glance. Unix time is the number of seconds since january 1st 1970, a sort of arbitrary date to make sure that all unix timestamps will be positive numbers.</p>
         </div>
-    </form>
+    </div>
 </body>
 </html>

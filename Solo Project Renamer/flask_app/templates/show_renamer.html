@@ -16,9 +16,19 @@
             <button class="NavBar2"><a href="/logout">Logout</a></button>
         </nav>
     </div>
-    <div>
-        <p>Name of File: {{renamer.name}}</p>
-        <p>Date: {{renamer.date}}</p>
+    <div class="Main">
+        <div class="LeftMain">
+            <h3 class="b5">File Number {{renamer.id}}</h3>
+            <p class="b5">Original Name: {{renamer.name}}</p>
+            <p class="b5">Original Date Time: {{renamer.date}}</p>
+            <p class="b5">Unix Date Time: {{renamer.unixdate}}</p>
+        </div>
+        <div class="RightMain">
+            <h3 class="b5">Explanations</h3>
+            <p class="b5">why change your filenames?</p>
+            <p class="b5">Often times you save files from many different places, each with their own way of naming files, and it can be nice to have a single naming scheme for files on your computer.</p>
+            <p class="b5">The nice thing about using unix time is being able to see when the file was saved at a glance. Unix time is the number of seconds since january 1st 1970, a sort of arbitrary date to make sure that all unix timestamps will be positive numbers.</p>
+        </div>
     </div>
 </body>
 </html>

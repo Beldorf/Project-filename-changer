@@ -22,10 +22,10 @@
             {% for renamers in show %}
             <div  id="b2">
                 <div>
-                    <h3>File Number {{renamers.id}}</h3>
-                    <p>Original Name: {{renamers.name}}</p>
-                    <p>Original Date Time: {{renamers.date}}</p>
-                    <p>Unix Date Time: {{renamers.unixdate}}</p>
+                    <h3 class="b5">File Number {{renamers.id}}</h3>
+                    <p class="b5">Original Name: {{renamers.name}}</p>
+                    <p class="b5">Original Date Time: {{renamers.date}}</p>
+                    <p class="b5">Unix Date Time: {{renamers.unixdate}}</p>
                 </div>
                 <div>
                     <button><a href="/show/{{renamers.id}}">View</a></button>
@@ -36,9 +36,10 @@
             {% endfor %}
         </div>
         <div class="RightMain">
-            <h3>Explanations</h3>
-            <p>why change your filenames?</p>
+            <h3 class="b5">Explanations</h3>
+            <p class="b5">why change your filenames?</p>
             <p class="b5">Often times you save files from many different places, each with their own way of naming files, and it can be nice to have a single naming scheme for files on your computer.</p>
+            <p class="b5">The nice thing about using unix time is being able to see when the file was saved at a glance. Unix time is the number of seconds since january 1st 1970, a sort of arbitrary date to make sure that all unix timestamps will be positive numbers.</p>
         </div>
     </div>
 </body>
